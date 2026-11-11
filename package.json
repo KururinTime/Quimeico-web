@@ -1,0 +1,12 @@
+{
+  "name": "quimeico-web",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Sitio web de Quimeico, agua para familias y empresas en Aysén.",
+  "scripts": {
+    "build": "node scripts/build.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
