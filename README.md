@@ -15,7 +15,7 @@ public/
   assets/           Fotografías y logo de Quimeico
 scripts/
   build.mjs         Generación de la carpeta de publicación
-.openai/
+config/
   hosting.json      Configuración de hosting de Quimeico
 ```
 
@@ -37,6 +37,6 @@ Requiere Node.js 18 o superior. No necesita instalar dependencias.
 
 La carpeta `dist/` contiene la página lista para publicar y se genera con el comando anterior. No se guarda en Git: GitHub conserva los archivos fuente y las imágenes originales.
 
-La configuración existente en `.openai/hosting.json` mantiene la identidad del sitio Quimeico y utiliza `dist/` como carpeta de publicación. Ejecuta `npm run build` antes de publicar.
+La configuración existente en `config/hosting.json` mantiene la identidad del sitio Quimeico y utiliza `dist/` como carpeta de publicación. Ejecuta `npm run build` antes de publicar.
 
 Este repositorio contiene únicamente el sitio de Quimeico.
