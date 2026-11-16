@@ -9,7 +9,16 @@ header{height:110px}
 .brand img{display:block;object-fit:contain;border-radius:50%}
 .brand-main img{width:78px;height:78px}
 .brand .brand-word{color:var(--ink);font-weight:800}
-.brand-footer img{width:90px;height:90px}
+.brand-footer{display:block;flex-shrink:0;line-height:0}
+.coverage .wrap{flex-wrap:wrap;gap:18px 24px}
+.coverage .wrap>span{white-space:nowrap}
+.foot>span{min-width:0;line-height:1.7}
+.brand-footer img{
+  width:90px;height:auto;object-fit:contain;border-radius:0;
+  padding:0;background:transparent;
+  clip-path:ellipse(42% 47.5% at 50% 51%);
+}
+footer .brand-footer img{height:auto}
 .btn{background:var(--teal);box-shadow:0 5px 18px #006d8015;transition:background .2s,transform .2s}
 .btn:hover{background:#005c71;transform:translateY(-2px)}
 a:focus-visible,button:focus-visible{outline:3px solid #148ac2;outline-offset:5px}
@@ -241,4 +250,114 @@ footer{background:#08395380;border-top-color:#a6daf33d}
 .sport-photo img { max-height: 320px; }
 @media (min-width: 640px) and (max-width: 900px) {
   .community-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+/* Natural photo proportions, without stretching the original photographs. */
+.hero-art.hero-product-photo{
+  width:100%;max-width:480px;justify-self:center;
+  height:auto;aspect-ratio:4/5;border-radius:46% 46% 28px 28px;
+}
+.hero-product-photo .hero-bidon{width:100%;height:100%;object-fit:contain;object-position:center;background:#dceff9}
+.product,.plant-photo,.accessory-card{border-radius:24px}
+.product-visual.product-real-photo{min-width:0;align-self:stretch}
+.product-real-photo img{height:100%;max-height:none;aspect-ratio:5/4;object-fit:cover}
+.plant-photo img{aspect-ratio:6/5;object-fit:cover;object-position:center 44%}
+.accessory-card .accessory-art.accessory-photo{height:340px;min-height:340px;padding:16px}
+.manual-crop,.usb-crop,.base-crop,.temperature-crop{
+  width:78%;height:100%;aspect-ratio:auto;border-radius:18px;
+}
+.accessory-photo .manual-crop img,
+.accessory-photo .usb-crop img,
+.accessory-photo .base-crop img,
+.accessory-photo .temperature-crop img{
+  position:static;display:block;width:100%;height:100%;max-width:100%;
+  object-fit:cover;object-position:center;
+}
+.accessory-photo .manual-crop img,.accessory-photo .temperature-crop img{object-fit:contain}
+.sport .sport-photo{max-width:360px}
+.sport .sport-photo a{width:100%;height:auto;border-radius:22px;overflow:hidden}
+.sport-photo img{display:block;width:100%;height:auto;max-height:440px;object-fit:contain}
+.community-card .basketball-photos{grid-template-columns:minmax(0,1fr);gap:12px}
+.community-card .basketball-photos a{border-radius:16px;overflow:hidden}
+.community-card .basketball-photos img{height:auto;aspect-ratio:16/10;object-fit:cover}
+.community-card .basketball-photos a:only-child img{aspect-ratio:2/1}
+@media(max-width:760px){
+  .hero-art.hero-product-photo{height:auto;max-width:420px;border-radius:46% 46% 24px 24px}
+  .product-real-photo img{height:auto;aspect-ratio:5/4}
+  .plant-photo img{aspect-ratio:6/5}
+}
+@media(max-width:400px){
+  .accessory-card .accessory-art.accessory-photo{height:310px;min-height:310px}
+  .manual-crop,.usb-crop,.base-crop,.temperature-crop{width:90%}
+  .hero-product-photo .float{padding:10px 12px;font-size:10px}
+}
+
+/* Bounded photo frames: preserve the complete product and its proportions. */
+.hero{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+.hero-art.hero-product-photo{
+  display:grid;grid-template-rows:minmax(0,1fr) auto;
+  width:100%;max-width:460px;height:560px;aspect-ratio:auto;
+  padding:24px 24px 18px;gap:14px;border-radius:32px;
+  background:linear-gradient(155deg,#e7f5fc,#cce7f5);
+}
+.hero-product-photo .hero-bidon{
+  min-height:0;width:100%;height:100%;object-fit:contain;
+  object-position:center;border-radius:18px;background:#dceff9;
+}
+.hero-product-photo .float{
+  position:static;transform:none;justify-self:center;max-width:100%;
+  white-space:normal;margin:0;padding:10px 20px;
+}
+.product-visual.product-real-photo{
+  display:flex;align-items:center;justify-content:center;
+  min-height:0;height:440px;padding:20px;background:#e5f3fb;
+}
+.product-real-photo img{
+  width:100%;height:100%;max-height:100%;aspect-ratio:auto;
+  object-fit:contain;border-radius:16px;
+}
+.accessory-card .accessory-art.accessory-photo{
+  height:360px;min-height:360px;padding:20px;background:#e5f3fb;
+}
+.manual-crop,.usb-crop,.base-crop,.temperature-crop{
+  width:100%;height:100%;min-width:0;aspect-ratio:auto;
+  display:flex;align-items:center;justify-content:center;border-radius:14px;
+}
+.accessory-photo .manual-crop img,
+.accessory-photo .usb-crop img,
+.accessory-photo .base-crop img,
+.accessory-photo .temperature-crop img{
+  position:static;width:100%;height:100%;max-width:100%;
+  object-fit:contain;object-position:center;transform:none;
+}
+.plant-photo img{aspect-ratio:1;object-fit:contain;background:#e5f3fb}
+.sport .sport-photo a{
+  width:auto;max-width:100%;height:auto;margin-inline:auto;
+  background:transparent;border:0;border-radius:16px;overflow:hidden;
+}
+.sport-photo img{
+  display:block;width:auto;max-width:100%;height:auto;max-height:400px;
+  object-fit:contain;
+}
+.community-card .basketball-photos{
+  grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;
+}
+.community-card .basketball-photos a{
+  min-width:0;background:transparent;border:0;border-radius:10px;
+}
+.community-card .basketball-photos img,
+.community-card .basketball-photos a:only-child img{
+  width:100%;height:120px;aspect-ratio:auto;object-fit:cover;object-position:center;
+}
+@media(max-width:760px){
+  .hero{grid-template-columns:minmax(0,1fr)}
+  .hero-art.hero-product-photo{height:500px;max-width:400px;padding:18px;gap:12px;border-radius:26px}
+  .product-visual.product-real-photo{height:360px;padding:16px}
+  .product-real-photo img{height:100%;aspect-ratio:auto}
+  .sport .sport-photo a{height:auto}
+  .sport-photo img{max-height:360px}
+}
+@media(max-width:400px){
+  .hero-art.hero-product-photo{height:450px;padding:14px}
+  .accessory-card .accessory-art.accessory-photo{height:310px;min-height:310px;padding:16px}
 }

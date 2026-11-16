@@ -1,6 +1,6 @@
 # Quimeico
 
-Sitio web de Quimeico: agua en bidones de 20 litros y dispensadores para familias y empresas en Coyhaique, Aysén y Puerto Chacabuco.
+Sitio web de Quimeico: agua en bidones de 20 litros y dispensadores para familias y empresas en Coyhaique, Aysén, Puerto Chacabuco, Melinka y Puerto Aguirre.
 
 Incluye productos, información de la planta, apoyo al deporte regional y contacto por WhatsApp y redes sociales.
 
