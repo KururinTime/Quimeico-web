@@ -15,3 +15,15 @@ function highlightSection(){
 window.addEventListener('scroll',()=>{if(!scheduled){scheduled=true;requestAnimationFrame(highlightSection)}},{passive:true});
 window.addEventListener('resize',highlightSection);
 highlightSection();
+
+// Content stays visible without JavaScript or when reduced motion is preferred.
+if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+ const processObserver = new IntersectionObserver(entries => {
+  for (const entry of entries) {
+   if (!entry.isIntersecting) continue;
+   entry.target.classList.add('is-revealing');
+   processObserver.unobserve(entry.target);
+  }
+ }, { threshold: 0.12 });
+ document.querySelectorAll('.purification-card').forEach(card => processObserver.observe(card));
+}
